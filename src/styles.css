@@ -1,0 +1,747 @@
+/* =====================================================
+   RESET Y BASE
+   Elimina estilos por defecto del navegador
+===================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #111;
+  background: #f0f4f8;
+}
+
+/* =====================================================
+   INPUTS UNIFICADOS
+   Una sola regla para todos los inputs de la app,
+   sin importar el type. Evita inconsistencias visuales.
+===================================================== */
+input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  margin-bottom: 4px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+/* Placeholder consistente en todos los inputs */
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =====================================================
+   LOGIN
+===================================================== */
+.login-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.login-logo-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #1a56db;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.login-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Labels del login */
+.field-group {
+  margin-bottom: 14px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+/* Input especifico del login (hereda los estilos base de input) */
+.field-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field-input:focus {
+  border-color: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+/* Boton principal del login (full width) */
+.btn-primary-login {
+  width: 100%;
+  padding: 10px;
+  background: #1a56db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+
+.btn-primary-login:hover:not(:disabled) {
+  background: #1447c0;
+}
+
+.btn-primary-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Separador "o continua con" */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+/* Boton de Google */
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.15s;
+}
+
+.btn-google:hover:not(:disabled) {
+  background: #f9fafb;
+}
+
+.btn-google:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #fef2f2;
+  color: #991b1b;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+.app {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  background: #1a56db;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  display: block;
+}
+
+.brand-rol {
+  font-size: 11px;
+  color: #6b7280;
+  display: block;
+}
+
+.userbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* =====================================================
+   LAYOUT GENERAL
+===================================================== */
+.main-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-container {
+  width: 100%;
+}
+
+/* Dos columnas iguales (paciente) */
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Columna angosta + columna ancha (formulario + lista) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .page-grid,
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* =====================================================
+   TABS DE NAVEGACION
+===================================================== */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  width: fit-content;
+}
+
+.tab-btn {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.tab-btn--active {
+  background: #1a56db;
+  color: #fff;
+}
+
+.tab-btn--active:hover {
+  background: #1447c0;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+/* Card basica (paciente) */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Card que ocupa todo el ancho en un grid */
+.card.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Card con estilo mas elaborado (admin/doctor) */
+.ui-card {
+  background: #fff;
+  border: 1px solid #d9dee8;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   FORMULARIOS (labels, hints, acciones)
+===================================================== */
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 5px;
+  margin-top: 12px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 6px 0 0;
+}
+
+/* Fila de botones al final de un formulario */
+.row-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Barra de filtros (citas) */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  width: auto;
+  flex: 1;
+  min-width: 140px;
+}
+
+/* =====================================================
+   BOTONES
+   Todos los botones comparten clase base .btn
+===================================================== */
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+/* Boton azul principal */
+.btn.btn-primary {
+  background: #1a56db;
+  color: #fff;
+}
+.btn.btn-primary:hover {
+  background: #1447c0;
+}
+
+/* Boton transparente / neutro */
+.btn.btn-ghost {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.btn.btn-ghost:hover {
+  background: #e5e7eb;
+}
+
+/* Boton rojo para eliminar */
+.btn.btn-danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.btn.btn-danger:hover {
+  background: #fecaca;
+}
+
+/* Boton verde para confirmar */
+.btn.btn-success {
+  background: #16a34a;
+  color: #fff;
+}
+.btn.btn-success:hover {
+  background: #15803d;
+}
+
+/* Boton secundario con borde */
+.btn.btn-secondary {
+  background: #fff;
+  color: #1e293b;
+  border: 1px solid #cfd6e4;
+}
+.btn.btn-secondary:hover {
+  background: #f8fafc;
+}
+
+/* Modificador de tamanio pequenio */
+.btn.btn-sm {
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+/* =====================================================
+   LISTAS DE ITEMS (citas, doctores, admins, usuarios)
+===================================================== */
+/* Lista de items con tarjeta (admin/doctor) */
+.ui-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ui-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #d9dee8;
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.ui-card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* Lista de citas del paciente */
+.cita-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cita-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+/* Contenido principal de una cita */
+.cita-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.cita-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.cita-especialidad {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+.cita-meta {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.cita-motivo {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* Razon de cancelacion o modificacion por admin/doctor */
+.cita-razon {
+  font-size: 12px;
+  color: #92400e;
+  margin-top: 4px;
+}
+
+.cita-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* Mensaje cuando no hay items en una lista */
+.empty-msg {
+  font-size: 14px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* =====================================================
+   SLOTS DE HORARIO
+===================================================== */
+.slots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.slot-btn {
+  padding: 5px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.slot-btn:hover {
+  border-color: #1a56db;
+  color: #1a56db;
+}
+
+.slot-btn--active {
+  background: #1a56db;
+  color: #fff;
+  border-color: #1a56db;
+}
+
+/* =====================================================
+   BADGES DE ESTADO
+===================================================== */
+.badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-default {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* =====================================================
+   ALERTAS (exito y error)
+===================================================== */
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.alert-error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.alert-ok {
+  background: #f0fdf4;
+  color: #065f46;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal h3 {
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   FILA DE EDICION DE HORARIO (MiHorario.jsx)
+===================================================== */
+.horario-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Los inputs dentro de la fila de horario no ocupan todo el ancho */
+.horario-edit-row select,
+.horario-edit-row input {
+  width: auto;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.sep {
+  color: #6b7280;
+  font-size: 14px;
+}

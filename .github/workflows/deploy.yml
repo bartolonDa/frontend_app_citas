@@ -23,6 +23,8 @@ jobs:
 
       - name: Build proyecto
         run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
       - name: Subir a S3
         uses: jakejarvis/s3-sync-action@master
